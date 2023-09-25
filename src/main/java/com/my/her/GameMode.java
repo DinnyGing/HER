@@ -16,15 +16,13 @@ public class GameMode {
     private String currentPlayer;
     private final Map<State, String> take = new LinkedHashMap<>();
     private final Map<CloneState, String> takeSecond = new LinkedHashMap<>();
-    private Map<String, Label> arrows = new HashMap<>();
+    private final Map<String, Label> arrows = new HashMap<>();
 
     public GameSettings getGameSettings() {
         return gameSettings;
     }
 
     public void setGameSettings(GameSettings gameSettings) {
-//        if (!gameSettings.getMode().equals("Slow"))
-//            board.setOpacity(0);
         this.gameSettings = gameSettings;
     }
 
@@ -110,16 +108,12 @@ public class GameMode {
         Point2D p1 = new Point2D(x, y);
         Point2D p2 = new Point2D(i, j);
         if(gameSettings.getMode().equals("Auto") && currentPlayer.equals("W")) {
-//            System.out.println(currentStateSecond.isMatchboxEmpty());
-//            System.out.println(takeSecond);
             if (currentStateSecond.takeBead(p1, p2) != null) {
                 takeSecond.put(currentStateSecond, currentStateSecond.takeBead(p1, p2));
                 step = true;
             }
         }
         else if(currentPlayer.equals("B")) {
-//            System.out.println(currentState.isMatchboxEmpty());
-//            System.out.println(take);
             if (currentState.takeBead(p1, p2) != null) {
                 take.put(currentState, currentState.takeBead(p1, p2));
                 step = true;

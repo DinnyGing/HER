@@ -127,7 +127,6 @@ public class Main extends Application {
             }
         });
         VBox arrows = new VBox();
-        Timer timer = new Timer();
         gameModeDwn.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             handleGameModeChange((String) newValue);
             if (!gameMode.getGameSettings().getMode().equals("Slow")) {
@@ -370,7 +369,6 @@ public class Main extends Application {
                         if (rowIndex == p1.getX() && colIndex == p1.getY()) {
                             StackPane stackPane = (StackPane) node;
                             stackPane.fireEvent(clickEvent);
-                            stackPane = null;
                         }
                     }
                 }
@@ -381,14 +379,11 @@ public class Main extends Application {
                         if (rowIndex == p2.getX() && colIndex == p2.getY()) {
                             StackPane stackPane = (StackPane) node;
                             stackPane.fireEvent(releaseEvent);
-                            stackPane = null;
                         }
                     }
                 }
             }
         }
-        set = null;
-        childrenCopy = null;
     }
     private void handleGameModeChange(String mode) {
         if (mode == null) {

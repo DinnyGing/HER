@@ -2,7 +2,6 @@ package com.my.her;
 
 public class GameSettings {
     private final String mode;
-    private boolean chooseButton;
     private boolean canMove;
     private int speed;
     private String playerWhoStarts;
@@ -22,17 +21,14 @@ public class GameSettings {
         winSecondComputer = 0;
         switch (mode) {
             case "Slow" -> {
-                chooseButton = true;
                 canMove = false;
                 speed = 1000;
             }
             case "Fast" -> {
-                chooseButton = false;
                 canMove = true;
                 speed = 150;
             }
             case "Auto" -> {
-                chooseButton = false;
                 canMove = false;
                 speed = 150;
                 startFirstComputer = 1;
@@ -47,10 +43,6 @@ public class GameSettings {
 
     public int getSpeed() {
         return speed;
-    }
-
-    public boolean isChooseButton() {
-        return chooseButton;
     }
 
     public boolean isCanMove() {

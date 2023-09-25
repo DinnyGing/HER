@@ -49,9 +49,6 @@ public class State {
     public List<String> getAllBeads(){
         return matchbox.getBeads();
     }
-    public boolean isMatchboxEmpty(){
-        return matchbox.isEmpty();
-    }
     public String randomBead(){
         return matchbox.pickMove();
     }

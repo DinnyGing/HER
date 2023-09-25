@@ -1,15 +1,8 @@
 package com.my.her;
 
 import javafx.geometry.Point2D;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CloneState {
