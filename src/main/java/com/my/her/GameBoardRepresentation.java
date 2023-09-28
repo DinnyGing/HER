@@ -287,7 +287,6 @@ public class GameBoardRepresentation {
         return null;
     }
     private void resetBoard(){
-        System.out.println(gameMode.getGameSettings().getPlayedRounds());
         if(gameMode.getGameSettings().getMode().equals("Auto")
                 && gameMode.getGameSettings().getRounds() - gameMode.getGameSettings().getPlayedRounds() == 0){
             gameMode.getGameSettings().setCanMove(false);

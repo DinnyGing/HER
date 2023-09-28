@@ -157,7 +157,6 @@ public class Main extends Application {
             } else {
                 if(!roundNumberTxtField.getText().equals("")) {
                     gameMode.getGameSettings().setRounds(Integer.parseInt(roundNumberTxtField.getText()));
-                    gameMode.getGameSettings().setCanMove(true);
                 }
                 return change;
             }
@@ -181,6 +180,8 @@ public class Main extends Application {
         Start.setTextFill(Color.DARKOLIVEGREEN);
         Start.setAlignment(Pos.BOTTOM_CENTER);
         Start.setStyle("-fx-border-color: #556b2f; -fx-border-width: 5px;");
+        Start.setOnMouseReleased(clickEvent -> start());
+
 
         HBox startButton = new HBox();
         startButton.setAlignment(Pos.CENTER);
@@ -384,6 +385,10 @@ public class Main extends Application {
                 }
             }
         }
+    }
+    private void start(){
+        if(gameMode.getGameSettings().getMode().equals("Auto"))
+            gameMode.getGameSettings().setCanMove(true);
     }
     private void handleGameModeChange(String mode) {
         if (mode == null) {
